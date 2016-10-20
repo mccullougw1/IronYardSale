@@ -50,7 +50,7 @@ public class Main {
     }
     public static ArrayList<Product> getAllProducts(Connection conn) throws SQLException {
         ArrayList<Product> products = new ArrayList<>();
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM products INNER JOIN ON users products.originator_id = users.id");
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM products"); //INNER JOIN ON users products.originator_id = users.id
         ResultSet results = stmt.executeQuery();
         while (results.next()) {
             int id = results.getInt("products.product_id");
@@ -87,7 +87,7 @@ public class Main {
         stmt.execute();
     }
     public static void addProduct(Connection conn, Product product, int originatorId) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("INSERT INTO products VALUES (NULL, ?, ?, ?, ?, ?, ? ");
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO products VALUES (NULL, ?, ?, ?, ?, ?, ?)");
         stmt.setString(1, product.name);
         stmt.setString(2, product.category);
         stmt.setString(3, product.description);
