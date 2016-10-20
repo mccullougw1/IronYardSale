@@ -1,0 +1,1 @@
+[{"category":"Widgets","dateAdded":"2016-10-19","description":"beautiful widget designed for the whole family's enjoyment. batteries not included","name":"Test Widget","originatorId":3,"price":2995.99,"productId":1},{"category":"assorted stuff","dateAdded":"2016-12-01","description":"nothing much to say here","name":"test2","originatorId":2,"price":3400.0,"productId":2}]
