@@ -7,7 +7,7 @@ public class Product {
     Integer productId;
     String name;
     String category;
-    String Description;
+    String description;
     double price;
     String dateAdded;
     Integer originatorId;
@@ -16,10 +16,13 @@ public class Product {
         this.productId = productId;
         this.name = name;
         this.category = category;
-        Description = description;
+        this.description = description;
         this.price = price;
         this.dateAdded = dateAdded;
         this.originatorId = originatorId;
+    }
+
+    public Product() {
     }
 
     public Integer getProductId() {
@@ -47,11 +50,11 @@ public class Product {
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        description = description;
     }
 
     public double getPrice() {
