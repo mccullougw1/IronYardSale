@@ -1,12 +1,16 @@
 package com.company;
 
+import jodd.json.JsonParser;
+import jodd.json.JsonSerializer;
 import org.h2.tools.Server;
+import spark.Session;
 import spark.Spark;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class Main {
+//    ********Classes*********
 //    --------Product--------
 //    Integer productId;
 //    String name;
@@ -33,8 +37,8 @@ public class Main {
         stmt.execute();
     }
 
-    public static User checkUser(Connection conn, String username) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE name = ?");
+    public static User getUser(Connection conn, String username) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ?");
         stmt.setString(1, username);
         ResultSet results = stmt.executeQuery();
         if (results.next()) {
@@ -57,7 +61,6 @@ public class Main {
             String dateAdded = results.getString("products.date");
             Integer originator = results.getInt("products.originator_id");
             products.add(new Product(id, name, category, description, price, dateAdded, originator));
-
         }
         return products;
 
@@ -78,6 +81,21 @@ public class Main {
         }
         return null;
     }
+    public static void deleteProduct(Connection conn, int productId) throws SQLException{
+        PreparedStatement stmt = conn.prepareStatement("DELETE FROM products WHERE id = ?");
+        stmt.setInt(1, productId);
+        stmt.execute();
+    }
+    public static void addProduct(Connection conn, Product product, int originatorId) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO products VALUES (NULL, ?, ?, ?, ?, ?, ? ");
+        stmt.setString(1, product.name);
+        stmt.setString(2, product.category);
+        stmt.setString(3, product.description);
+        stmt.setDouble(4, product.price);
+        stmt.setString(5, product.dateAdded);
+        stmt.setInt(6, product.originatorId);
+        stmt.execute();
+    }
     public static void main(String[] args) throws SQLException{
         Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
@@ -85,10 +103,60 @@ public class Main {
         Spark.externalStaticFileLocation("public");
         Spark.init();
 
+        Spark.post(
+                "/login",
+                (request, response) -> {
+                    String body = request.body();
+                    JsonParser parser = new JsonParser();
+                    User user = parser.parse(body, User.class);
+                    User userDatabase = getUser(conn, user.username);
+                    if (userDatabase == null) {
+                        createUser(conn, user.username, user.password);
+                    } else if (!user.password.equals(userDatabase.password)) {
+                        Spark.halt(403);
+                        return "";
+                    }
+                    Session session = request.session();
+                    session.attribute("username", user.username);
+                    return "";
+                }
 
+        );
+        Spark.get(
+                "/get-products",
+                (request, response) -> {
+                    ArrayList<Product> products = getAllProducts(conn);
+                    JsonSerializer s = new JsonSerializer();
+                    return s.serialize(products);
 
-
-
+                }
+        );
+        Spark.post(
+                "/add-product",
+                (request, response) -> {
+                    Session session = request.session();
+                    String username = session.attribute("username");
+                    User user = getUser(conn, username);
+                    String body = request.body();
+                    JsonParser parser = new JsonParser();
+                    Product product = parser.parse(body, Product.class);
+                    addProduct(conn, product, user.id);
+                    return "";
+                }
+        );
+        Spark.get(
+                "/get-user",
+                (request, response) -> {
+                    Session session = request.session();
+                    String username = session.attribute("username");
+                    if (username != null) {
+                        User user = getUser(conn, username);
+                        JsonSerializer serializer = new JsonSerializer();
+                        return serializer.serialize(user);
+                    }
+                    return "";
+                }
+        );
 
     }
 }
