@@ -96,7 +96,7 @@ public class Main {
         stmt.setInt(6, product.originatorId);
         stmt.execute();
     }
-    public static void main(String[] args) throws SQLException{
+    public static void main(String[] args) throws SQLException {
         Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         createTables(conn);
