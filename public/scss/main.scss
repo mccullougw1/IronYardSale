@@ -142,3 +142,44 @@ body{
 
 
 }
+
+.loginScreen {
+   position: fixed;
+   // margin: auto;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: rgba(200, 200, 200, .6);
+
+   .lsContent {
+      position: relative;
+      top: 200px;
+      left: 500px;
+      background: #F2F1EF;
+      width: 30%;
+
+      .lscTop {
+         background: #22313F;
+         border-bottom: 5px #96281B solid;
+
+         img {
+            margin: 10px;
+         }
+
+         .lsctClose {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 10px;
+            background: #96281B;
+            border-radius: 100%;
+            width: 100%;
+         }
+      }
+      .lscBottom {
+         border-top: 10px #67809F solid;
+      }
+
+   }
+}

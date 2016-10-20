@@ -75,4 +75,33 @@ body {
       display: inline-block;
       font-size: 20px; }
 
+.loginScreen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(200, 200, 200, 0.6); }
+  .loginScreen .lsContent {
+    position: relative;
+    top: 200px;
+    left: 500px;
+    background: #F2F1EF;
+    width: 30%; }
+    .loginScreen .lsContent .lscTop {
+      background: #22313F;
+      border-bottom: 5px #96281B solid; }
+      .loginScreen .lsContent .lscTop img {
+        margin: 10px; }
+      .loginScreen .lsContent .lscTop .lsctClose {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        background: #96281B;
+        border-radius: 100%;
+        width: 100%; }
+    .loginScreen .lsContent .lscBottom {
+      border-top: 10px #67809F solid; }
+
 /*# sourceMappingURL=styles.css.map */
