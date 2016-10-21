@@ -1,6 +1,8 @@
 console.log('we ready')
 
 
+
+
 var userBut = document.querySelector('.bbButton')
 var loginBox = document.querySelector('.loginScreen')
 var loginCloseBut = document.querySelector('.lsctClose')
@@ -20,7 +22,14 @@ var closerLookDesc = document.querySelector('.pclDesc')
 var closerLookPrice = document.querySelector('.pclPrice')
 var closerLookDate = document.querySelector('.pclDate')
 var closerLookHolder = document.querySelector('.productCloserLook')
-
+var addNewHolder = document.querySelector('.addNewProduct')
+var addNewCloseBut = document.querySelector('.anptClose')
+var addNewName = document.querySelector('.anpName')
+var addNewDesc = document.querySelector('.anpDesc')
+var addNewPrice = document.querySelector('.anpPrice')
+var addNewBut = document.querySelector('.anpBut')
+var addNewCat = document.querySelector('.anpCat')
+var startAddNew = document.querySelector('.vbBut')
 /////////
 var boxHolder = document.querySelector('.veryBottomFillContent')
 //
@@ -85,13 +94,13 @@ var fillFirstContent = function(bigData){
 
                break;
             default:
-               productPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/lederhosen-96.png'
-               productPic.title = "Lederhosen"
+               productPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/sun_glasses-96.png'
+               productPic.title = "default"
                productPic.width = "124"
                break;
 
          }
-      window.location.hash = ''
+      window.location.hash = 'home'
       productHolder.addEventListener('click', takeCloserLook)
 }
 
@@ -403,8 +412,8 @@ var displayCloserlook = function(route){
 
                         break;
                      default:
-                        closerLookPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/lederhosen-96.png'
-                        closerLookPic.title = "Lederhosen"
+                        closerLookPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/sun_glasses-96.png'
+                        closerLookPic.title = "default"
                         closerLookPic.width = "124"
                         break;
 
@@ -422,6 +431,48 @@ var displayCloserlook = function(route){
 
 }
 
+var addProductFunction = function(){
+   if(addNewHolder.classList.contains('remove')){
+      addNewHolder.classList.remove('remove')
+   } else {
+      addNewHolder.classList.add('remove')
+   }
+}
+
+var pushProduct = function(){
+   var crntDate = new Date()
+
+   $.getJSON('/get-user', function(data){
+      var dummyProduct = {
+            "category": addNewName.value,
+            "dateAdded": crntDate.toDateString(),
+            "description": addNewDesc.value,
+            "name": addNewName.value,
+            "originatorId": data.id,
+            "price": addNewPrice.value
+
+         }
+
+
+
+         $.post('/add-product', JSON.stringify(dummyProduct)).then(function(){
+            addNewName.value = ''
+            addNewDesc.value = ''
+            addNewPrice.value = ''
+            addNewCat.value = ''
+            addNewHolder.classList.add('remove')
+            $.getJSON('/get-products', function(bigLongData){
+               boxHolder.innerHTML = ''
+               for( var keyB in bigLongData){
+                  fillFirstContent(bigLongData[keyB])
+               }
+            })
+         })
+   })
+
+
+}
+
 
 var hashRouter = function(){
    var crntRoute = window.location.hash.slice(1)
@@ -431,9 +482,13 @@ var hashRouter = function(){
 
    switch (isNaN(crntRoute)) {
       case true:
-         if(crntRoute === ''){
-            console.log('im empty')
-            fillFirstContent()
+         if(crntRoute === 'home'){
+            $.getJSON('/get-products', function(theData){
+               for(var keyC in theData){
+                  fillFirstContent(theData[keyC])
+               }
+            })
+
          }
          // console.log('here')
          filterTheContent(crntRoute)
@@ -462,3 +517,7 @@ closerLookBut.addEventListener('click', displayCloserlook)
 window.addEventListener('hashchange', hashRouter)
 
 loginInput.addEventListener('click', loginCheck)
+
+addNewCloseBut.addEventListener('click', addProductFunction)
+startAddNew.addEventListener('click', addProductFunction)
+addNewBut.addEventListener('click', pushProduct)
