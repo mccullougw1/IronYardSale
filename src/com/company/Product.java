@@ -80,4 +80,6 @@ public class Product {
     public void setOriginatorId(Integer originatorId) {
         this.originatorId = originatorId;
     }
+
+
 }
