@@ -6,8 +6,12 @@ import org.h2.tools.Server;
 import spark.Session;
 import spark.Spark;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Main {
 //    ********Classes*********
@@ -96,10 +100,43 @@ public class Main {
         stmt.setInt(6, product.originatorId);
         stmt.execute();
     }
-    public static void main(String[] args) throws SQLException {
+    public static void loadDummyData(Connection conn) throws SQLException, IOException {
+
+        File f = new File("dummy_data_json");
+        FileReader fr = new FileReader(f);
+        int fileSize = (int) f.length();     //cast to int
+        char[] contents = new char[fileSize];
+        fr.read(contents, 0, fileSize);
+        JsonParser parser = new JsonParser();
+        ProductWrapper productWrapper = parser.parse(contents, ProductWrapper.class);
+        for (int i = productWrapper.products.size() -1 ; i >= 0; i--) {
+            Product p = productWrapper.products.get(i);
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO products VALUES (NULL, ?, ?, ?, ?, ?, ?)");
+            stmt.setString(1, p.name);
+            stmt.setString(2, p.category);
+            stmt.setString(3, p.description);
+            stmt.setDouble(4, p.price);
+            stmt.setString(5, p.dateAdded);
+            stmt.setInt(6, p.originatorId);
+            stmt.execute();
+        }
+
+
+    }
+    public static void main(String[] args) throws SQLException, IOException {
         Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         createTables(conn);
+
+        PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM products");
+        ResultSet rowCount = stmt.executeQuery();
+        int count = 0;
+        while (rowCount.next()){
+            ++count;
+        }
+        if (count == 1){
+            loadDummyData(conn);
+        }
         Spark.externalStaticFileLocation("public");
         Spark.init();
 
