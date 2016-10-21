@@ -6,9 +6,49 @@ img {
 body{
    margin: 0;
 }
+
+.tpTitle {
+
+   font-family: 'Lobster', cursive;
+   text-align: right;
+   font-size: 50px;
+   padding: 10px;
+   color: #777;
+   z-index: 300;
+}
+.tpText {
+   margin-top: 10px;
+   padding-left:150px;
+   font-size: 25px;
+   margin-bottom: 100px;
+   text-align: right;
+   color: #888;
+   z-index: 300;
+}
+.middleText {
+   font-size: 18px;
+}
+.middleIcon{
+   // margin-left: 80px;
+   margin-bottom: 25px;
+
+}
+
+
+@mixin collapser($min-ht){
+      max-height : $min-ht;
+      overflow: hidden;
+}
+
+
 #app-container{
    background: url('../images/pexels-photo-57858.jpeg');
    padding-bottom: 30px;
+
+   .bbButton{
+      background: #049372;
+   }
+
 
 
    .topContent{
@@ -20,7 +60,7 @@ body{
       .pageLogo {
          width: 20%;
          position: absolute;
-         top: 1%;
+         top: 0;
          left:38%;
       }
 
@@ -30,6 +70,11 @@ body{
          color: white;
          font-family: 'Lobster', cursive;
          font-size: 70px;
+         margin-bottom: 0;
+      }
+
+      .bannerUserPic {
+         margin-bottom: 15px;
       }
 
       .bannerButton {
@@ -40,28 +85,52 @@ body{
          background: linear-gradient(to left, #22313F , rgba(0,0,0,0));
 
          .bannerUser {
-            color: #fff;
+
             font-family: 'Lobster', cursive;
             display: inline-block;
+            font-size: 20px;
+            color: #049372;
+            text-shadow:
+               -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+               -1px 1px 0 #fff,
+                1px 1px 0 #fff;
          }
+         .remove {
+            display: none;
+            color: rgba(0,0,0,0);
+
+            * {
+               display: none;
+            }
+         }
+
       }
    }
 
-   .homeCoursel {
 
+   .homeCoursel {
+      max-height: 10000px;
+      min-height: 60px;
+      padding-top: 10px;
       padding: 0 100px;
       background: #F2F1EF;
       border-bottom: 15px #67809F solid;
+      &.collapsed-el{
+         .homeThing{ opacity: 0 ;}
+         @include collapser(30px) ;
+      }
 
       .homeThing {
          width: 20%;
          display: inline-block;
          // background: rgba(250, 250, 250, 0.4);
          margin: 20px;
+         opacity: 1;
 
 
          .htImage{
-            width: 80%;
+            width: 60%;
             border-radius: 20px;
          }
 
@@ -85,25 +154,61 @@ body{
 
       .pcTop {
 
+         .pctUpperTop{
+
+
+
+         }
+
+
+
+
          padding-top: 60px;
 
-         .middleIcon{
-            // margin-left: 80px;
 
+         .middleText {
+            font-size: 15px;
          }
       }
 
 
       .pcTopMiddle {
          text-align: center;
-         margin-top: 20px;
+         margin-top: 100px;
          padding: 50px 0;
+         background: url('../images/pexels-photo-139325.jpeg');
+         // border-top:
+         border-top: 10px #96281B solid;
+         border-bottom:  15px #67809F solid;
+         max-height: 950px;
+
+
+         .tmText {
+            position: absolute;
+            right: 220px;
+            bottom:-700;
+            color: #049372;
+            font-family: 'Lobster', cursive;
+            font-size: 100px;
+            text-shadow:
+               -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+               -1px 1px 0 #fff,
+                1px 1px 0 #fff;
+         }
+
+         .tmLowerText {
+            font-size: 20px;
+            padding: 40px 30px;
+            color: #444;
+            // margin-top: 30px;
+         }
 
 
 
          .tmPic {
             width:100%;
-            height: 60%;
+            height: 70%;
 
          }
 
@@ -112,6 +217,8 @@ body{
          }
 
       }
+
+
 
 
 
@@ -174,12 +281,63 @@ body{
             margin: 10px;
             background: #96281B;
             border-radius: 100%;
-            width: 100%;
+            width: 5%;
+            color: #fff;
+
+         }
+         .lsctClose:hover {
+            cursor: pointer;
          }
       }
       .lscBottom {
          border-top: 10px #67809F solid;
+         font-family: 'Lobster', cursive;
+         color: #666;
+         padding-left: 50px;
+         padding-bottom: 30px;
+
+         form {
+
+            input {
+               width: 60%;
+            }
+
+            * {
+               margin: 5px;
+            }
+
+            .lsBut {
+               background: #049372;
+            }
+         }
+
+
+
+
+         .lscbLock {
+            position: absolute;
+            z-index: 1;
+            right:0;
+            top: 55%;
+            width: 28%;
+            color: #fff;
+
+         }
       }
 
    }
+}
+
+
+.remove {
+   display: none;
+   color: rgba(0,0,0,0);
+
+   * {
+      display: none;
+   }
+}
+
+button {
+   background: #049372;
 }
