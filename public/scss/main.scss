@@ -510,6 +510,92 @@ body{
    }
 
 }
+// border-top: 10px #67809F solid;
+.pcVeryBottom {
+   background: #22313F;
+   margin: 5% 10%;
+   padding: 0;
+
+   h1 {
+      color: fff;
+      font-size: 70px;
+      margin: 10px;
+      text-align: right;
+      font-family: 'Lobster', cursive;
+   }
+
+   button {
+      background: #049372;
+      font-family: 'Lobster', cursive;
+      color: #fff;
+      margin-left: 325px;
+      margin-bottom: 30px;
+      width: 60%;
+      font-size: 40px;
+
+   }
+
+   .veryBottomFillContent {
+      padding: 100px 0;
+
+      background: #F2F1EF;
+      padding: 10px;
+      border-top: 15px #96281B solid;
+      margin-bottom: 30px;
+      border-bottom: 15px #67809F solid;
+      // border-left: 5px #67809F solid;
+
+      .productDiv{
+         padding: auto;
+         padding-left: 40px;
+      }
+
+      .productDiv:hover {
+         background: radial-gradient(circle, rgba(74, 69, 83,0.9) 5%, rgba(0,0,0,0)50%);
+      }
+
+   }
+   .veryBottomNav{
+      background: #67809F;
+      border-top: 15px #96281B solid;
+      border-bottom: 15px #96281B solid;
+      // border-right: 15px #67809F solid;
+
+
+
+      ul {
+         list-style: none;
+         height: 100%;
+         padding-left: 0;
+
+         li {
+            color: fff;
+            font-size: 30px;
+            margin: 10px 0;
+            text-align: left;
+
+            font-family: 'Lobster', cursive;
+         }
+      }
+
+
+   }
+}
+
+.bottomBar {
+   background: #F2F1EF;
+      border-top: 20px #96281B solid;
+      padding: 0;
+      margin: 0;
+   .bottomBarInner{
+      border-top: 20px #67809F solid;
+   background: #F2F1EF;
+   color: rgba(0,0,0,0);
+   margin: 0;
+   padding: 0;
+
+   }
+}
 
 
 .remove {

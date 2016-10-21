@@ -288,6 +288,63 @@ body {
         width: 28%;
         color: #fff; }
 
+.pcVeryBottom {
+  background: #22313F;
+  margin: 5% 10%;
+  padding: 0; }
+  .pcVeryBottom h1 {
+    color: fff;
+    font-size: 70px;
+    margin: 10px;
+    text-align: right;
+    font-family: 'Lobster', cursive; }
+  .pcVeryBottom button {
+    background: #049372;
+    font-family: 'Lobster', cursive;
+    color: #fff;
+    margin-left: 325px;
+    margin-bottom: 30px;
+    width: 60%;
+    font-size: 40px; }
+  .pcVeryBottom .veryBottomFillContent {
+    padding: 100px 0;
+    background: #F2F1EF;
+    padding: 10px;
+    border-top: 15px #96281B solid;
+    margin-bottom: 30px;
+    border-bottom: 15px #67809F solid; }
+    .pcVeryBottom .veryBottomFillContent .productDiv {
+      padding: auto;
+      padding-left: 40px; }
+    .pcVeryBottom .veryBottomFillContent .productDiv:hover {
+      background: radial-gradient(circle, rgba(74, 69, 83, 0.9) 5%, transparent 50%); }
+  .pcVeryBottom .veryBottomNav {
+    background: #67809F;
+    border-top: 15px #96281B solid;
+    border-bottom: 15px #96281B solid; }
+    .pcVeryBottom .veryBottomNav ul {
+      list-style: none;
+      height: 100%;
+      padding-left: 0; }
+      .pcVeryBottom .veryBottomNav ul li {
+        color: fff;
+        font-size: 30px;
+        margin: 10px 0;
+        text-align: left;
+        font-family: 'Lobster', cursive; }
+
+.bottomBar {
+  background: #F2F1EF;
+  border-top: 20px #96281B solid;
+  padding: 0;
+  margin: 0; }
+  .bottomBar .bottomBarInner {
+    border-top: 20px #67809F solid;
+    background: #F2F1EF;
+    color: transparent;
+    margin: 0;
+    padding: 0; }
+
 .remove {
   display: none;
   color: transparent; }

@@ -23,28 +23,28 @@
 
          <div class="container-fluid homeCoursel collapsed-el">
             <div class="homeThing">
-               <img class="htImage" src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/shorts-96.png" title="Shorts" width="350">
+               <img class="htImage" src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/shorts-96.png" title="Shorts" width="350" href="#shorts">
                <!-- <img class="htImage" src="https://robohash.org/tammy" alt=""> -->
                <div class="caption">
                   <p></p>
                </div>
             </div>
             <div class="homeThing">
-               <img class="htImage" src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/t-shirt-96.png" title="T-Shirt" width="350">
+               <img class="htImage" src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/t-shirt-96.png" title="T-Shirt" width="350" href="#shirt">
                <!-- <img class="htImage" src="https://robohash.org/tammy" alt=""> -->
                <div class="caption">
                   <p></p>
                </div>
             </div>
             <div class="homeThing">
-               <img class="htImage" src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/trainers-96.png" title="Trainers" width="350">
+               <img class="htImage" src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/trainers-96.png" title="Trainers" width="350" href="#shoes">
                <!-- <img class="htImage" src="https://flathash.com/tom" alt=""> -->
                <div class="caption">
                   <p></p>
                </div>
             </div>
             <div class="homeThing">
-               <img class="htImage" src="https://maxcdn.icons8.com/Color/PNG/96/Cultures/bowler_hat-96.png" title="Bowler Hat" width="96">
+               <img class="htImage" src="https://maxcdn.icons8.com/Color/PNG/96/Cultures/bowler_hat-96.png" title="Bowler Hat" width="96" href="#hat">
                <!-- <img class="htImage" src="https://flathash.com/tom" alt=""> -->
                <div class="caption">
                   <p></p>
@@ -112,22 +112,23 @@
                </ul> -->
             </div>
          </div>
-         <div class="container-fluid pageContent pc">
+         <div class="container pcVeryBottom">
 
             <h1>Current Items</h1>
 
-            <div class="col-sm-3">
+            <div class="col-sm-2 veryBottomNav">
                <ul>
                   <a href="#shorts"><li>Shorts</li></a>
-                  <a href="#jackets"><li>Jackets</li></a>
+                  <a href="#jacket"><li>Jackets</li></a>
                   <a href="#shoes"><li>Shoes</li></a>
                   <a href="#hat"><li>Hat</li></a>
                   <a href="#shirt"><li>Shirt</li></a>
                   <a href="#pants"><li>Pants</li></a>
+                  <a href=""><li>View All..</li></a>
 
                </ul>
             </div>
-            <div class="col-sm-9 veryBottomFillContent">
+            <div class="col-sm-10 veryBottomFillContent">
                <!-- <div class="col-sm-3">
                   <img src="https://robohash.org/tammy" alt="" width="124px"/>
                </div>
@@ -166,6 +167,8 @@
                </div> -->
 
             </div>
+            <button class="btn btn-primary vbBut" name="button">Add New Product..</button>
+            <!-- <br>
             <br>
             <br>
             <br>
@@ -190,10 +193,14 @@
             <br>
             <br>
             <br>
-            <br>
-            <br>
+            <br> -->
          </div>
 
+      </div>
+      <div class="bottomBar">
+         <div class="container-fluid bottomBarInner">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita nisi perferendis eligendi voluptas illum cupiditate, soluta consectetur, corrupti labore aspernatur nostrum est. Doloremque, ullam iste illo autem, accusantium architecto modi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eius nam laudantium temporibus, numquam enim officia molestias adipisci quia doloremque, odit iusto. Ratione ipsam dolorem delectus modi repellendus. Quasi, ratione.</p>
+         </div>
       </div>
       <div class="loginScreen remove">
          <!-- <form>
@@ -229,16 +236,16 @@
                <span class="pcltClose">   &nbsp; &nbsp;X </span>
             </div>
             <div class="pclBottom">
-               <h1>Product</h1>
+               <h1 class="pclName">Product</h1>
                <div class="container-fluid">
                   <div class="col-sm-9">
                      <img class="pclPic" src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/vegan_clothing-96.png" title="Vegan Clothing" width="200">
                   </div>
                   <div class="col-sm-3">
-                     <h1>category</h1>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellat maxime id, corporis ipsam nam quam distinctio repudiandae iste quos aliquam, adipisci laboriosam praesentium perspiciatis vel excepturi, dolorum quo. Possimus?</p>
-                     <h3>price</h3>
-                     <h4>date</h4>
+                     <h1 class="pclCat">category</h1>
+                     <p class="pclDesc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellat maxime id, corporis ipsam nam quam distinctio repudiandae iste quos aliquam, adipisci laboriosam praesentium perspiciatis vel excepturi, dolorum quo. Possimus?</p>
+                     <h3 class="pclPrice">price</h3>
+                     <h4 class="pclDate">date</h4>
                      <br>
                      <button class="btn btn-primary pclBut" type="button" name="button">Buy</button>
                   </div>
@@ -250,7 +257,7 @@
 
          </div>
       </div>
-      <div class="addNewProduct remove">
+      <div class="addNewProduct">
          <div class="anpContent">
             <div class="anpTop">
                <img src="./images/the-iron-yard.png" alt="" width="60px"/>
@@ -260,13 +267,13 @@
                <h1>New Product..</h1>
                <div>
                   <form>
-                     <input type="text" placeholder="Category">
+                     <input type="text" placeholder="Category" class="anpCat">
                      <br>
-                     <input type="text" placeholder="Name">
+                     <input type="text" placeholder="Name" class="anpName">
                      <br>
-                     <input type="text" placeholder="Price">
+                     <input type="text" placeholder="Price" class="anpPrice">
                      <br>
-                     <input type="text" placeholder="Desciption">
+                     <input type="text" placeholder="Desciption" class="anpDesc">
                      <br>
                      <button class="btn btn-primary anpBut" type="button" name="button">Add</button>
                   </form>
