@@ -118,16 +118,17 @@
 
             <div class="col-sm-3">
                <ul>
-                  <li href="#shorts">Shorts</li>
-                  <li href="#jackets">Jackets</li>
-                  <li href="#shoes">Shoes</li>
-                  <li href="#hat">Hat</li>
-                  <li href="#shirts">Shirt</li>
-                  <li href="#pants">Pants</li>
+                  <a href="#shorts"><li>Shorts</li></a>
+                  <a href="#jackets"><li>Jackets</li></a>
+                  <a href="#shoes"><li>Shoes</li></a>
+                  <a href="#hat"><li>Hat</li></a>
+                  <a href="#shirt"><li>Shirt</li></a>
+                  <a href="#pants"><li>Pants</li></a>
+
                </ul>
             </div>
-            <div class="col-sm-9">
-               <div class="col-sm-3">
+            <div class="col-sm-9 veryBottomFillContent">
+               <!-- <div class="col-sm-3">
                   <img src="https://robohash.org/tammy" alt="" width="124px"/>
                </div>
                <div class="col-sm-3">
@@ -162,7 +163,7 @@
                </div>
                <div class="col-sm-3">
                   <img src="https://robohash.org/tammy" alt="" width="124px"/>
-               </div>
+               </div> -->
 
             </div>
             <br>
@@ -222,11 +223,56 @@
          </div>
       </div>
       <div class="productCloserLook remove">
-         <div class="pclTop">
-            <img src="./images/the-iron-yard.png" alt="" width="60px"/>
-            <span class="pcltClose">    &nbsp;&nbsp;X </span>
-         </div>
+         <div class="pclContent">
+            <div class="pclTop">
+               <img src="./images/the-iron-yard.png" alt="" width="60px"/>
+               <span class="pcltClose">   &nbsp; &nbsp;X </span>
+            </div>
+            <div class="pclBottom">
+               <h1>Product</h1>
+               <div class="container-fluid">
+                  <div class="col-sm-9">
+                     <img class="pclPic" src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/vegan_clothing-96.png" title="Vegan Clothing" width="200">
+                  </div>
+                  <div class="col-sm-3">
+                     <h1>category</h1>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellat maxime id, corporis ipsam nam quam distinctio repudiandae iste quos aliquam, adipisci laboriosam praesentium perspiciatis vel excepturi, dolorum quo. Possimus?</p>
+                     <h3>price</h3>
+                     <h4>date</h4>
+                     <br>
+                     <button class="btn btn-primary pclBut" type="button" name="button">Buy</button>
+                  </div>
+               </div>
+               <div class="container-fluid">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi fuga quaerat assumenda eum error, suscipit aspernatur ipsam facilis, eos quod blanditiis quidem officia debitis ad expedita, hic impedit possimus? Tenetur!Lorem ipsum dolor sit amet, consectetur adipisicing el, consectetur adipisicing elit. Necessitatibus reprehenderit earum laborum nisi possimus cupiditate, quasi unde atque fugit aliquam, repellat esse perspiciatis repudiandae placeat ipsam quaerat expedita. Eveniet, culpa!</p>
+               </div>
+            </div>
 
+         </div>
+      </div>
+      <div class="addNewProduct remove">
+         <div class="anpContent">
+            <div class="anpTop">
+               <img src="./images/the-iron-yard.png" alt="" width="60px"/>
+               <span class="anptClose">    &nbsp;&nbsp;X </span>
+            </div>
+            <div class="anpBottom">
+               <h1>New Product..</h1>
+               <div>
+                  <form>
+                     <input type="text" placeholder="Category">
+                     <br>
+                     <input type="text" placeholder="Name">
+                     <br>
+                     <input type="text" placeholder="Price">
+                     <br>
+                     <input type="text" placeholder="Desciption">
+                     <br>
+                     <button class="btn btn-primary anpBut" type="button" name="button">Add</button>
+                  </form>
+               </div>
+            </div>
+         </div>
       </div>
       <script src="./js/lib/jquery.min.js"></script>
       <script src="./js/lib/underscore.min.js"></script>

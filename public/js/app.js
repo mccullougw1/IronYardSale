@@ -12,8 +12,83 @@ var loginUser = document.querySelector('.bannerUser')
 var loginUserPic = document.querySelector('.bannerUserPic')
 var topBannerIcons = document.querySelectorAll('.homeThing')
 
+/////////
+var boxHolder = document.querySelector('.veryBottomFillContent')
+//
+
+$.getJSON('/get-products', function(superData){
+   for (var key in superData){
+      fillFirstContent(superData[key])
+   }
+
+})
 
 
+var fillFirstContent = function(bigData){
+
+   // console.log(bigData)
+
+   var productHolder = document.createElement('div')
+      productHolder.classList = "col-sm-3 productDiv"
+
+      boxHolder.appendChild(productHolder)
+      var productPic = document.createElement('img')
+
+         productPic.id = bigData.productId
+         productHolder.appendChild(productPic)
+         switch (bigData.category) {
+            case 'pants':
+               productPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/lederhosen-96.png'
+               productPic.title = "Lederhosen"
+               productPic.width = "124"
+               break;
+               // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/lederhosen-96.png" title="Lederhosen" width="96">
+            case 'shirt':
+               productPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/t-shirt-96.png'
+               productPic.title = "shirt"
+               productPic.width = "124"
+               break;
+            case 'shoes':
+               productPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/trainers-96.png'
+               productPic.title = "shoes"
+               productPic.width = "124"
+               break;
+            case 'hat':
+               productPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Cultures/bowler_hat-96.png'
+               productPic.title = "hat"
+               productPic.width = "124"
+               break;
+            case 'jacket':
+
+               productPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/vegan_clothing-96.png'
+               productPic.title = "jacket"
+               productPic.width = "124"
+               break;
+            case 'shorts':
+            //    // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/shorts-96.png" title="Shorts" width="96">
+
+               productPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/shorts-96.png'
+               productPic.title = "shorts"
+               productPic.width = "124"
+
+               break;
+            default:
+               productPic.src = 'https://maxcdn.icons8.com/Color/PNG/96/Clothing/lederhosen-96.png'
+               productPic.title = "Lederhosen"
+               productPic.width = "124"
+               break;
+
+         }
+      productHolder.addEventListener('click', takeCloserLook)
+}
+
+
+var takeCloserLook = function(wowData){
+
+   console.log(wowData.path[0].id)
+   window.location.hash = wowData.path[0].id
+
+}
 
 
 //
@@ -31,75 +106,69 @@ var topBannerIcons = document.querySelectorAll('.homeThing')
 
 
 
-var dummyData = [
-   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/shorts-96.png" title="Shorts" width="96">
-   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/vegan_clothing-96.png" title="Vegan Clothing" width="96">
-   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Cultures/bowler_hat-96.png" title="Bowler Hat" width="96">
-   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/lederhosen-96.png" title="Lederhosen" width="96">
-   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/t-shirt-96.png" title="T-Shirt" width="96">
-   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/trainers-96.png" title="Trainers" width="96">
-   {
-      category: 'pants',
-      dateAdded: '2016-09-07',
-      description: 'im a pair of pants',
-      name: 'skinny jeans',
-      originatorId: 17,
-      price: 49.99,
+// var dummyData = [
+//    // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/shorts-96.png" title="Shorts" width="96">
+//    // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/vegan_clothing-96.png" title="Vegan Clothing" width="96">
+//    // <img src="https://maxcdn.icons8.com/Color/PNG/96/Cultures/bowler_hat-96.png" title="Bowler Hat" width="96">
+//    // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/lederhosen-96.png" title="Lederhosen" width="96">
+//    // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/t-shirt-96.png" title="T-Shirt" width="96">
+//    // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/trainers-96.png" title="Trainers" width="96">
+//    {
+//       category: 'pants',
+//       dateAdded: '2016-09-07',
+//       description: 'im a pair of pants',
+//       name: 'skinny jeans',
+//       originatorId: 17,
+//       price: 49.99,
+//
+//    },
+//    {
+//       category: 'shirt',
+//       dateAdded: '2016-06-27',
+//       description: 'long-sleeve plaid',
+//       name: 'hipster plaid',
+//       originatorId: 24,
+//       price: 27.50,
+//
+//    },
+//    {
+//       category: 'hat',
+//       dateAdded: '2016-06-27',
+//       description: 'long-sleeve plaid',
+//       name: 'hipster plaid',
+//       originatorId: 33,
+//       price: 67.50,
+//
+//    },
+//    {
+//       category: 'shoes',
+//       dateAdded: '2016-06-27',
+//       description: 'long-sleeve plaid',
+//       name: 'hipster plaid',
+//       originatorId: 24,
+//       price: 67.87,
+//
+//    },
+//    {
+//       category: 'jacket',
+//       dateAdded: '2016-06-27',
+//       description: 'long-sleeve plaid',
+//       name: 'hipster plaid',
+//       originatorId: 23,
+//       price: 67.87,
+//
+//    },
+//    {
+//       category: 'shorts',
+//       dateAdded: '2016-06-27',
+//       description: 'long-sleeve plaid',
+//       name: 'hipster plaid',
+//       originatorId: 77,
+//       price: 67.87,
+//
+//    },
+// ]
 
-   },
-   {
-      category: 'shirt',
-      dateAdded: '2016-06-27',
-      description: 'long-sleeve plaid',
-      name: 'hipster plaid',
-      originatorId: 24,
-      price: 27.50,
-
-   },
-   {
-      category: 'hat',
-      dateAdded: '2016-06-27',
-      description: 'long-sleeve plaid',
-      name: 'hipster plaid',
-      originatorId: 33,
-      price: 67.50,
-
-   },
-   {
-      category: 'shoes',
-      dateAdded: '2016-06-27',
-      description: 'long-sleeve plaid',
-      name: 'hipster plaid',
-      originatorId: 24,
-      price: 67.87,
-
-   },
-   {
-      category: 'jacket',
-      dateAdded: '2016-06-27',
-      description: 'long-sleeve plaid',
-      name: 'hipster plaid',
-      originatorId: 23,
-      price: 67.87,
-
-   },
-   {
-      category: 'shorts',
-      dateAdded: '2016-06-27',
-      description: 'long-sleeve plaid',
-      name: 'hipster plaid',
-      originatorId: 77,
-      price: 67.87,
-
-   },
-]
-
-for(var key in dummyData){
-   console.log(dummyData[key])
-   $.post('/add-product', JSON.stringify(dummyData[key])).then(function(superData){
-      console.log(superData)
-   })
-}
 
 
 // $.getJSON('/get-user', function(evt){
@@ -138,7 +207,7 @@ for(var key in dummyData){
 
 var loginFunction = function(){
 
-   console.log('im here')
+   // console.log('im here')
 
    if(loginBox.classList.contains('remove')){
       loginBox.classList.remove('remove')
@@ -150,11 +219,11 @@ var loginFunction = function(){
 
 }
 
-var topBannerFun = function(){
-   console.log(topBannerIcons)
-
-
-}
+// var topBannerFun = function(){
+//    console.log(topBannerIcons)
+//
+//
+// }
 
 topBannerHolder.addEventListener('mouseover', function(){
 
@@ -181,7 +250,7 @@ var loginCheck = function(){
 
    $.post('/login', JSON.stringify(loginData)).then(function(){
       $.getJSON('/get-user', function(userData){
-         console.log(userData)
+         // console.log(userData)
 
          loginUser.textContent = userData.username
          loginUserPic.src = 'https://robohash.org/' + userData.username

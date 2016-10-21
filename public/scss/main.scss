@@ -351,6 +351,166 @@ body{
    }
 }
 
+.productCloserLook {
+   position: fixed;
+   // margin: auto;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: rgba(200, 200, 200, .6);
+
+
+      .pclContent {
+         position: relative;
+         top: 30px;
+         height: 90%;
+         left: 400px;
+         background: #F2F1EF;
+         width: 50%;
+         margin-bottom: 30px;
+         padding-bottom: 30px;
+
+         .pclTop {
+            background: #22313F;
+            border-bottom: 5px #96281B solid;
+
+            img {
+               margin: 10px;
+            }
+
+            .pcltClose {
+               position: absolute;
+               top: 0;
+               right: 0;
+               margin: 10px;
+               background: #96281B;
+               border-radius: 100%;
+               width: 3.5%;
+               color: #fff;
+
+            }
+            .pcltClose:hover {
+               cursor: pointer;
+            }
+         }
+         .pclBottom {
+            border-top: 10px #67809F solid;
+            font-family: 'Lobster', cursive;
+            color: #666;
+            padding-left: 50px;
+            padding-bottom: 30px;
+
+            .pclBut {
+               background: #049372;
+            }
+
+            img {
+               margin-top: 100px;
+            }
+
+            // form {
+            //
+            //    input {
+            //       width: 60%;
+            //    }
+            //
+            //    * {
+            //       margin: 5px;
+            //    }
+            //
+            //    .pclBut {
+            //       background: #049372;
+            //    }
+            // }
+
+
+         }
+
+      }
+
+
+}
+
+.addNewProduct {
+   position: fixed;
+   // margin: auto;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: rgba(200, 200, 200, .6);
+
+   .anpContent {
+      position: relative;
+      top: 200px;
+      left: 500px;
+      background: #F2F1EF;
+      width: 30%;
+
+      .anpTop {
+         background: #22313F;
+         border-bottom: 5px #96281B solid;
+
+         img {
+            margin: 10px;
+         }
+
+         .anptClose {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 10px;
+            background: #96281B;
+            border-radius: 100%;
+            width: 5%;
+            color: #fff;
+
+         }
+         .anptClose:hover {
+            cursor: pointer;
+         }
+      }
+      .anpBottom {
+         border-top: 10px #67809F solid;
+         font-family: 'Lobster', cursive;
+         color: #666;
+         padding-left: 50px;
+         padding-bottom: 30px;
+
+         form {
+
+            input {
+               width: 60%;
+            }
+
+            * {
+               margin: 5px;
+            }
+
+            .anpBut {
+               background: #049372;
+            }
+         }
+
+
+
+
+         .lscbLock {
+            position: absolute;
+            z-index: 1;
+            right:0;
+            top: 55%;
+            width: 28%;
+            color: #fff;
+
+         }
+      }
+
+   }
+
+}
+
 
 .remove {
    display: none;

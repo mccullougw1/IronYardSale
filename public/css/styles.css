@@ -196,6 +196,98 @@ body {
         width: 28%;
         color: #fff; }
 
+.productCloserLook {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(200, 200, 200, 0.6); }
+  .productCloserLook .pclContent {
+    position: relative;
+    top: 30px;
+    height: 90%;
+    left: 400px;
+    background: #F2F1EF;
+    width: 50%;
+    margin-bottom: 30px;
+    padding-bottom: 30px; }
+    .productCloserLook .pclContent .pclTop {
+      background: #22313F;
+      border-bottom: 5px #96281B solid; }
+      .productCloserLook .pclContent .pclTop img {
+        margin: 10px; }
+      .productCloserLook .pclContent .pclTop .pcltClose {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        background: #96281B;
+        border-radius: 100%;
+        width: 3.5%;
+        color: #fff; }
+      .productCloserLook .pclContent .pclTop .pcltClose:hover {
+        cursor: pointer; }
+    .productCloserLook .pclContent .pclBottom {
+      border-top: 10px #67809F solid;
+      font-family: 'Lobster', cursive;
+      color: #666;
+      padding-left: 50px;
+      padding-bottom: 30px; }
+      .productCloserLook .pclContent .pclBottom .pclBut {
+        background: #049372; }
+      .productCloserLook .pclContent .pclBottom img {
+        margin-top: 100px; }
+
+.addNewProduct {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(200, 200, 200, 0.6); }
+  .addNewProduct .anpContent {
+    position: relative;
+    top: 200px;
+    left: 500px;
+    background: #F2F1EF;
+    width: 30%; }
+    .addNewProduct .anpContent .anpTop {
+      background: #22313F;
+      border-bottom: 5px #96281B solid; }
+      .addNewProduct .anpContent .anpTop img {
+        margin: 10px; }
+      .addNewProduct .anpContent .anpTop .anptClose {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        background: #96281B;
+        border-radius: 100%;
+        width: 5%;
+        color: #fff; }
+      .addNewProduct .anpContent .anpTop .anptClose:hover {
+        cursor: pointer; }
+    .addNewProduct .anpContent .anpBottom {
+      border-top: 10px #67809F solid;
+      font-family: 'Lobster', cursive;
+      color: #666;
+      padding-left: 50px;
+      padding-bottom: 30px; }
+      .addNewProduct .anpContent .anpBottom form input {
+        width: 60%; }
+      .addNewProduct .anpContent .anpBottom form * {
+        margin: 5px; }
+      .addNewProduct .anpContent .anpBottom form .anpBut {
+        background: #049372; }
+      .addNewProduct .anpContent .anpBottom .lscbLock {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 55%;
+        width: 28%;
+        color: #fff; }
+
 .remove {
   display: none;
   color: transparent; }
