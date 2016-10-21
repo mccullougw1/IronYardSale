@@ -32,6 +32,12 @@ var topBannerIcons = document.querySelectorAll('.homeThing')
 
 
 var dummyData = [
+   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/shorts-96.png" title="Shorts" width="96">
+   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/vegan_clothing-96.png" title="Vegan Clothing" width="96">
+   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Cultures/bowler_hat-96.png" title="Bowler Hat" width="96">
+   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/lederhosen-96.png" title="Lederhosen" width="96">
+   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/t-shirt-96.png" title="T-Shirt" width="96">
+   // <img src="https://maxcdn.icons8.com/Color/PNG/96/Clothing/trainers-96.png" title="Trainers" width="96">
    {
       category: 'pants',
       dateAdded: '2016-09-07',

@@ -91,10 +91,10 @@ body{
             font-size: 20px;
             color: #049372;
             text-shadow:
-               -1px -1px 0 #fff,
-                1px -1px 0 #fff,
-               -1px 1px 0 #fff,
-                1px 1px 0 #fff;
+               -0.5px -0.5px 0 #fff,
+                0.5px -0.5px 0 #fff,
+               -0.5px 0.5px 0 #fff,
+                0.5px 0.5px 0 #fff;
          }
          .remove {
             display: none;
@@ -125,13 +125,16 @@ body{
          width: 20%;
          display: inline-block;
          // background: rgba(250, 250, 250, 0.4);
-         margin: 20px;
+         margin:25px 20px;
          opacity: 1;
+
 
 
          .htImage{
             width: 60%;
             border-radius: 20px;
+            margin-left: 40px;
+            // padding-left: 90px;
          }
 
          .htImage:hover {
@@ -140,7 +143,7 @@ body{
       }
 
       .homeThing:hover {
-         background: radial-gradient(circle, rgba(74, 69, 83,0.9) 5%, rgba(0,0,0,0)60%);
+         background: radial-gradient(circle, rgba(74, 69, 83,0.9) 5%, rgba(0,0,0,0)50%);
       }
    }
 
@@ -200,7 +203,8 @@ body{
          .tmLowerText {
             font-size: 20px;
             padding: 40px 30px;
-            color: #444;
+            color: #222;
+
             // margin-top: 30px;
          }
 
@@ -209,12 +213,29 @@ body{
          .tmPic {
             width:100%;
             height: 70%;
+            border-bottom: 20px #F2F1EF solid;
+            border-top: 20px #F2F1EF solid;
 
          }
 
-         p {
-            padding: 50px 0;
+         // p {
+         //    padding: 50px 0;
+         // }
+
+         .pcbottomBox {
+
+            margin-top: 130px;
+
+
+            .pcBottomPic {
+               margin-top: 50px;
+               width: 100%;
+            }
+            .pcBottomText {
+               font-size: 15px;
+            }
          }
+
 
       }
 
@@ -236,7 +257,9 @@ body{
       color: #FFF;
 
       h1 {
-         font-size: 50px;
+         padding-left: 40px;
+         margin: 40px 0;
+         font-size: 70px;
          font-family: 'Lobster', cursive;
       }
 
