@@ -54,7 +54,7 @@ public class Product {
     }
 
     public void setDescription(String description) {
-        description = description;
+        this.description = description;
     }
 
     public double getPrice() {
@@ -80,4 +80,6 @@ public class Product {
     public void setOriginatorId(Integer originatorId) {
         this.originatorId = originatorId;
     }
+
+
 }
