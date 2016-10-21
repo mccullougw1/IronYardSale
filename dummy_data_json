@@ -1,0 +1,196 @@
+{
+  "products": [
+  {
+     "category":"pants" ,
+     "dateAdded": "2016-09-07",
+     "description": "im a pair of pants",
+     "name": "skinny jeans",
+     "originatorId": 17,
+     "price": 49.99
+  },
+  {
+     "category": "shirt",
+     "dateAdded": "2016-06-27",
+     "description": "long-sleeve plaid",
+     "name": "hipster plaid",
+     "originatorId": 24,
+     "price": 27.50
+  },
+  {
+     "category": "hat",
+     "dateAdded": "2016-06-27",
+     "description": "long-sleeve stripe",
+     "name": "hipster stripe",
+     "originatorId": 33,
+     "price": 67.50
+  },
+  {
+     "category": "shoes",
+     "dateAdded": "2016-06-27",
+     "description": "long-sleeve alternate",
+     "name": "oxford",
+     "originatorId": 24,
+     "price": 67.87
+  },
+  {
+     "category": "jacket",
+     "dateAdded": "2016-06-27",
+     "description": "long-sleeve plaid",
+     "name": "hipster plaid",
+     "originatorId": 23,
+     "price": 67.87
+  },
+  {
+     "category": "shorts",
+     "dateAdded": "2016-06-27",
+     "description": "long-sleeve plaid",
+     "name": "best black",
+     "originatorId": 77,
+     "price": 67.87
+  },
+  {
+       "category": "pants",
+       "dateAdded": "2016-09-07",
+       "description": "im a pair of pants",
+       "name": "skinny jeans mens",
+       "originatorId": 17,
+       "price": 49.99
+    },
+    {
+       "category": "shirt",
+       "dateAdded": "2016-06-27",
+       "description": "long-sleeve plaid",
+       "name": "hipster plaid",
+       "originatorId": 24,
+       "price": 27.50
+    },
+    {
+       "category": "hat",
+       "dateAdded": "2016-06-27",
+       "description": "long-sleeve plaid",
+       "name": "hipster plaid basic",
+       "originatorId": 33,
+       "price": 67.50
+    },
+    {
+       "category": "shoes",
+       "dateAdded": "2016-06-27",
+       "description": "long-sleeve plaid",
+       "name": "hipster plaid custom",
+       "originatorId": 24,
+       "price": 67.87
+    },
+    {
+       "category": "jacket",
+       "dateAdded": "2016-06-27",
+       "description": "long-sleeve plaid",
+       "name": "hipster plaid",
+       "originatorId": 23,
+       "price": 67.87
+    },
+    {
+       "category": "shorts",
+       "dateAdded": "2016-06-27",
+       "description": "long-sleeve plaid",
+       "name": "hipster plaid",
+       "originatorId": 77,
+       "price": 67.87
+    },
+    {
+         "category":"pants" ,
+         "dateAdded": "2016-09-07",
+         "description": "im a pair of pants",
+         "name": "skinny jeans",
+         "originatorId": 17,
+         "price": 49.99
+      },
+      {
+         "category": "shirt",
+         "dateAdded": "2016-06-27",
+         "description": "long-sleeve plaid",
+         "name": "hipster plaid",
+         "originatorId": 24,
+         "price": 27.50
+      },
+      {
+         "category": "hat",
+         "dateAdded": "2016-06-27",
+         "description": "long-sleeve stripe",
+         "name": "hipster stripe II",
+         "originatorId": 33,
+         "price": 67.50
+      },
+      {
+         "category": "shoes",
+         "dateAdded": "2016-06-27",
+         "description": "long-sleeve alternate",
+         "name": "hipster plaid III",
+         "originatorId": 24,
+         "price": 67.87
+      },
+      {
+         "category": "jacket",
+         "dateAdded": "2016-06-27",
+         "description": "long-sleeve plaid",
+         "name": "denim",
+         "originatorId": 23,
+         "price": 67.87
+      },
+      {
+         "category": "shorts",
+         "dateAdded": "2016-06-27",
+         "description": "long-sleeve plaid",
+         "name": "custom hipster plaid",
+         "originatorId": 77,
+         "price": 67.87
+      },
+      {
+           "category": "pants",
+           "dateAdded": "2016-09-07",
+           "description": "im a pair of pants",
+           "name": "original black jeans",
+           "originatorId": 17,
+           "price": 49.99
+        },
+        {
+           "category": "shirt",
+           "dateAdded": "2016-06-27",
+           "description": "long-sleeve plaid",
+           "name": "ugly plaid",
+           "originatorId": 24,
+           "price": 27.50
+        },
+        {
+           "category": "hat",
+           "dateAdded": "2016-06-27",
+           "description": "long-sleeve plaid",
+           "name": "phat hat",
+           "originatorId": 33,
+           "price": 67.50
+        },
+        {
+           "category": "shoes",
+           "dateAdded": "2016-06-27",
+           "description": "long-sleeve plaid",
+           "name": "geekster mobility",
+           "originatorId": 24,
+           "price": 67.87
+        },
+        {
+           "category": "jacket",
+           "dateAdded": "2016-06-27",
+           "description": "long-sleeve plaid",
+           "name": "front end fashion",
+           "originatorId": 23,
+           "price": 67.87
+        },
+        {
+           "category": "shorts",
+           "dateAdded": "2016-06-27",
+           "description": "long-sleeve plaid",
+           "name": "backend formal",
+           "originatorId": 77,
+           "price": 67.87
+        }
+     ]
+  }
